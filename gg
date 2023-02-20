@@ -1,0 +1,23 @@
+fc = 100
+Fs = 10000
+time_dur = 0.1
+Ts = 1 / Fs
+N = time_dur * Fs
+
+
+n = np.arange(0, N, 1)
+sinewave1 = np.sin(2 * pi * fc / Fs * n)
+sinewave2 = np.sin(2 * pi * 50 / Fs * n)
+t = n * Ts 
+
+
+# print(x)
+plt.plot(t, sinewave1)
+
+
+plt.figure()
+plt.stem(t[:100], sinewave1[:100] * 512)
+
+
+with np.printoptions(suppress=True):
+  print(sinewave1[:100] * 1023)
